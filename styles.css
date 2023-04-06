@@ -1,0 +1,750 @@
+/* variables */
+:root {
+    --bg_sides_color: #d5a5c5;
+    --main_bg_color1: white;
+    --footer_color_1: #411780; /* the footer variables are very poorly named considering that I use them for the header and a lot of other things... */
+    --footer_color_2: #1b0030; /* (cont.) i call it footer for the sake of a shorter variable name. */
+    --section_bg_color: #faf2fa;
+    --highlight_color: #ffc30e;
+    --highlight_color2: #e8a308;
+    --text_color_main:black;
+    --text_color_footer: white;
+
+}
+
+/* general css */
+html {
+    background-color: var(--bg_sides_color);
+}
+
+
+body {
+    margin: 0px;
+}
+
+* {
+    font-family: Garamond, "serif";
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--text_color_main);
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.content_bg, .content_bg_flex {
+    background-color: var(--section_bg_color);
+    border-radius: 3vmin;
+    height: 90%;
+    width: 91%;
+    margin: auto;
+    height: fit-content;
+}
+
+.content_bg_flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* header and footer styling (mostly portfolio and about_me)*/
+header, footer {
+    background-color: var(--footer_color_1);
+    color: var(--text_color_footer);
+    width: 100%;
+    font-size: 4vw;
+}
+
+table {
+    width: auto;
+    margin: auto;
+}
+
+td {
+    padding: 0vh 1vw;
+}
+
+html#portfolio header, html#about_me header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: -1vh;
+    text-align: left;
+    margin-bottom: 2vh;
+}
+
+#header_links {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+header a {
+    padding: 4ch 6ch;
+    color: var(--text_color_footer);
+    font-size: 2.3vw;
+}
+
+footer a {
+    color: var(--text_color_footer);
+}
+
+header a:hover {
+    background-color: var(--footer_color_2);
+}
+
+/* index styling */
+html#index {
+    height: 100%;
+}
+
+#index_grid {
+    display: grid;
+    grid-template-rows: 40% auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: "index_header" "mainpage_desc" "mainpage_nav" "index_settings";
+    grid-gap: 2vh 0vw;
+    justify-content: center;
+    align-content: stretch;
+    height: 100vh;
+}
+
+#index_header {
+    font-size: 7vmin;
+    grid-area: index_header;
+    background-image: url("images/dog_peace_sign.png");
+    background-repeat: repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+}
+
+#index_header h2, #index_header h1 {
+    width: 75%;
+    margin: auto;
+    padding-left: 1vw;
+    background-color: var(--footer_color_1);
+}
+
+#index_header h1 {
+    margin-bottom: 0px;
+}
+
+#index_header h2 {
+    margin-top: 0px;
+}
+
+#mainpage_nav, #mainpage_desc {
+    width: 90%;
+    text-align: center;
+    padding: 1vh 3vw;
+    background-color: var(--main_bg_color1);
+    color: var(--text_color_main);
+    font-size: 2.5vmin;
+    border: thick solid var(--highlight_color);
+    border-radius: 1vmin;
+    margin: auto;
+}
+
+#mainpage_nav {
+    grid-area: mainpage_nav;
+}
+
+#mainpage_desc {
+    grid-area: mainpage_desc;
+}
+
+.mainpage_links {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 3vmin;
+
+}
+
+.mainpage_links a {
+    background-color: var(--footer_color_1);
+    width: 30%;
+    padding: 4vh 5vw;
+    color: var(--text_color_footer);
+    border-radius: 1vmin;
+}
+
+.settings {
+    width: fit-content;
+    text-align: center;
+    background-color: var(--highlight_color);
+    border-radius: 3vmin;
+    padding: 2vmin;
+    margin: auto;
+}
+
+#settings_index {
+    grid-area: index_settings;
+}
+
+.settings h2, .settings h3 {
+    font-size: 150%;
+    background-color: var(--main_bg_color1);
+    color: var(--text_color_main);
+    width: fit-content;
+    padding: 0.2vh 0.5vw;
+    border-radius: 1vmin;
+    margin: auto;
+}
+
+#theme_container {
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+        "purple_yellow blue_pink green_orange"
+        "light dark submit"
+    ;
+    grid-gap: 5% 5%;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+#theme_container > h3 {
+    grid-area: header;
+}
+
+.theme_option, .color_pallet, .theme_color_submit {
+    font-size: 4vmin;
+    padding: 4vw;
+    border-radius: 0.5vmin;
+    cursor: pointer;
+}
+
+#theme_container button[type="submit"] {
+    grid-area: submit;
+}
+
+#light_theme {
+    color: black;
+    background-color: #faf2fa;
+    border: thick solid white;
+    grid-area: light;
+}
+
+#dark_theme {
+    color: white;
+    background-color: #614a58;
+    border: thick solid #423841;
+    grid-area: dark;
+}
+
+#light_theme.light_clicked, #light_theme:hover {
+    border-color: #f9f7fa;
+    background-color: #e4e1e6;
+}
+
+#dark_theme.dark_clicked, #dark_theme:hover {
+    border-color:#302830;
+    background-color: #423841;
+}
+
+#purple_yellow {
+    color: #e4e1e6;
+    background-color: #411780;
+    border: medium solid #ffc30e;
+    grid-area: purple_yellow;
+}
+
+#blue_pink {
+    color: black;
+    background-color: #5874d1;
+    border: medium solid #f2a5d6;
+    grid-area: blue_pink;
+}
+
+#green_orange {
+    color: black;
+    background-color: #d3f5b8;
+    border: medium solid #e87451;
+    grid-area: green_orange;
+}
+
+#purple_yellow.purple_yellow_clicked, #purple_yellow:hover {
+    background-color: #1b0030;
+    border: medium solid #e8a308;
+}
+
+#blue_pink.blue_pink_clicked, #blue_pink:hover {
+    background-color: #4247c9;
+    border: medium solid #d9719d;
+}
+
+#green_orange.green_orange_clicked, #green_orange:hover {
+    background-color: #a3d68b;
+    border: medium solid #cf5d3a;
+}
+
+/* portfolio styling */
+#portfolio_grid {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        "portfolio_nav" "item1" "item2" "item3" "item4" "item5" "jump_to_top";
+    grid-gap: 1vh 0vw; 
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+#portfolio_grid > * {
+    background-color: var(--main_bg_color1);
+    border-radius: 3vmin;   
+}
+
+#portfolio_grid nav {
+    grid-area: portfolio_nav;
+    align-self: start;
+    font-size: 2.3vw;
+}
+
+.item_link {
+    display: inline-block;
+    color: var(--text_color_footer);
+    padding: 1vh 3.6vw;
+    margin: 1vh 1vw;
+    background-color: var(--footer_color_1);
+    border-radius: 0.5vmin;
+}
+
+.item_link:hover {
+    background-color: var(--footer_color_2);
+}
+
+.item {
+    display: flex;
+    border-radius: 3vmin;
+    padding: 1.2%;
+    text-align: left;
+    font-size: 2.3vw;
+}
+
+.item img {
+    height: 18vh;
+    margin: 0vh 0.5vw;
+    float: left;
+}
+
+.item div { 
+    width: fit-content;
+    flex-shrink: 0;
+}
+
+.item p {
+    padding-left: 1vw;
+}
+
+.item video {
+    height: 18vh;
+    width: 40vw
+}
+
+.item div p {
+    clear: left;
+}
+
+#item1 {
+    grid-area: item1;
+}
+
+#item2 {
+    grid-area: item2;
+}
+
+#item3 {
+    grid-area: item3;
+}
+
+#item4 {
+    grid-area: item4;
+}
+
+#item5 {
+    grid-area: item5;
+}
+
+#jump_to_top {
+    grid-area: jump_to_top;
+    height: fit-content;
+    align-self: end;
+}
+
+/* about_me styling */
+#about_me_grid {
+    display: grid;
+    grid-template-rows: 20% 25% 40% auto auto;
+    grid-template-columns: auto;
+    grid-template-areas: 
+        "desc" "photos" "music" "table" "other_bits";
+    text-align: left;
+    margin: 0% 3% 6vh 3%;
+    grid-gap: 1% 1%;
+
+}
+
+#about_me_grid > * {
+    background-color: var(--main_bg_color1);
+    border-radius: 3vmin;
+    padding: 1vmin;
+}
+
+#about_me_desc {
+    grid-area: desc;
+    border: medium solid var(--footer_color_1);
+    font-size: 2.8vw;
+    height: fit-content;
+}
+
+#photo_gallery {
+    grid-area: photos;
+}
+
+#photo_gallery img[alt~="playing"] {
+    width: 66%;
+}
+
+#photo_gallery img[alt~="smiling"] {
+    width: 32%;
+}
+
+#music video {
+    width: 75%;
+}
+
+#required_table {
+    grid-area: table;
+    font-size: 2vw;
+    padding-bottom: 2vh;
+}
+
+#required_table table {
+    width: 100%;
+    border: medium solid var(--highlight_color);
+    border-collapse: collapse;
+}
+
+#required_table th[id="left"] {
+    border-right-color: var(--text_color_footer);
+}
+
+#required_table caption {
+    width: 100%;
+    font-size: 150%;
+}
+
+#required_table td, #required_table th {
+    text-align: center;
+    width: 50%;
+    border: solid medium var(--highlight_color);
+    background-color: var(--text_color_footer);
+}
+
+#required_table th {
+    height: 5ch;
+    background-color: var(--highlight_color);
+    border: solid medium var(--highlight_color);
+    color: var(--text_color_main);
+    font-size: 1.1em;
+}
+
+#music {
+    grid-area: music;
+    font-size: 125%;
+    text-align: center;
+}
+
+#other_bits {
+    grid-area: other_bits;
+}
+
+#other_bits .content_bg {
+    height: 90%;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#other_bits h3, #other_bits h2 {
+    margin: 1vh auto;
+}
+
+#other_bits button {
+    padding: 8% 14%;
+    margin-top: 0.5vh;
+    background-color: var(--footer_color_1);
+    color: var(--text_color_footer);
+    border-radius: 0.5vmin;
+    border: thick solid var(--text_color_main);
+    cursor: pointer;
+    display: inline-block;
+}
+
+#other_bits button[type="submit"] {
+    padding: 3%;
+    font-size: 130%;
+}
+
+#other_bits button:hover {
+    background-color: var(--footer_color_2);
+}
+
+#other_bits textarea {
+    width: 35%;
+    border: medium solid var(--footer_color_1);
+    resize: none;
+}
+
+#other_bits textarea:focus {
+    outline:none;
+}
+
+button#ani_button {
+    position: relative;
+}
+
+#ani_button img {
+    position: absolute;
+    top: 90%;
+    left: -1%;
+}
+
+label[for="ani_button"] {
+    display: block;
+}
+
+.button_move {
+    animation-name: button_move;
+    animation-duration: 5s;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes button_move {
+    0% {left: 0vw;} 
+    50% {left: 65vw;} 
+    100% {left: 0vw;}
+}
+
+
+
+/* tablet versions */
+@media screen and (min-width: 800px) {
+    /* i removed the borders from most of the content on the phone version because they looked really pixellated and gross,
+    but i'll put them back for the tablet and desktop versions because they look better there.*/
+    .item {
+        border: thick solid var(--highlight_color);
+    }
+
+    #portfolio_grid nav, #jump_to_top {
+        border: thick solid var(--footer_color_1);
+    }
+
+    .settings {
+        border: thick solid var(--footer_color_1);
+    }
+
+    .settings h2, .settings h3 {
+        border: medium solid var(--footer_color_1);
+    }
+
+    #photo_gallery, #required_table {
+        border: medium solid var(--footer_color_1);
+    }
+
+    #other_bits, #music, #about_me_desc {
+        border: medium solid var(--highlight_color);
+    }
+
+    /* index styling */
+    #index_grid {
+        grid-template-rows: 50% auto auto;
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+            "index_header index_header"
+            "mainpage_nav mainpage_nav"
+            "mainpage_desc index_settings";
+            grid-gap: 1vh 1vw;
+        
+    }
+
+    .settings#settings_index {
+        padding: 10% 0px;
+    }
+
+    #theme_container {
+        grid-gap: 2%;
+    }
+
+    .theme_option, .color_pallet, .theme_color_submit {
+        padding: 5%;
+        font-size: 150%;
+    }
+
+    #mainpage_nav {
+        font-size: 2vmin;
+    }
+
+    .mainpage_links a {
+        font-size: 2.5vmin;
+        padding: 10% 8%;
+    }
+
+    #mainpage_desc {
+        padding: 2% 4%;
+    }
+
+    /* about_me styling */
+    div#about_me_grid {
+        grid-template-rows: 22% auto auto auto;
+        grid-template-columns: auto auto;
+        grid-template-areas: 
+            "desc desc""photos photos""music table""other_bits other_bits";
+    }
+}
+
+/* desktop versions */
+@media screen and (min-width: 1000px) {
+
+    header, footer {
+        font-size: 1em;
+    }
+
+    footer {
+        padding-bottom: 1vh;
+    }
+
+    #header_links {
+        height: 100%;
+        align-content: center;
+        justify-content: space-evenly;
+    }
+
+    header a {
+        font-size: 1em;
+        height: max-content;
+    }
+
+    header a:hover {
+        background-color: var(--footer_color_2);
+    }
+
+    /* index styling */
+    #index_grid {
+        grid-template-rows: 60% auto auto;
+        grid-template-columns: auto auto 25%;
+        grid-template-areas: 
+            "index_header index_header index_header"
+            "mainpage_desc mainpage_desc index_settings"
+            "mainpage_nav mainpage_nav index_settings";
+            grid-gap: 1vh 1vw;
+    }
+
+
+    #mainpage_desc, #mainpage_nav {
+        width: 85%;
+    }
+
+    #mainpage_nav {
+        margin-bottom: 5vh;
+    }
+
+    .mainpage_links a:hover {
+        background-color: var(--footer_color_2);
+    }
+
+    #settings_index.settings {
+        position: relative;
+        left: -2vw;
+        top: -2vh;
+        align-self: center;
+        padding: 10% 0%;
+    }
+
+    .theme_option, .color_pallet, .theme_color_submit {
+        padding: 20% 3%;
+        font-size: 150%;
+    }
+
+    /* portfolio styling */
+    #portfolio_grid {
+        grid-template-rows: auto auto auto auto;
+        grid-template-columns: 15% auto;
+        grid-template-areas: 
+        "portfolio_nav item1"
+        "portfolio_nav item2"
+        "portfolio_nav item3"
+        "portfolio_nav item4"
+        "jump_to_top item5";
+        grid-gap: 1vh 1vw; 
+    }
+
+    #portfolio_grid nav {
+        margin-left: 1vw;
+        position: sticky;
+        -webkit-position: sticky;
+        top: 2vh;
+        align-self: start;
+    }
+
+    #portfolio_grid nav h2 {
+        font-size: 85%;
+    }
+
+    .item_link {
+        width: 90%;
+        padding: 1vh 0px;
+        margin: 1vh auto;
+        font-size: 50%;
+    }
+
+    .item_link:hover {
+        background-color: var(--footer_color_2);
+    }
+
+    .item p {
+        font-size: 70%;
+    }
+
+
+    .item video {
+        width: 19.5vw;
+    }
+
+    .item img {
+        width: auto;
+        height: 25vh;
+    }
+
+    #jump_to_top {
+        font-size: 2vw;
+    }
+
+    /* about_me styling */
+    div#about_me_grid {
+        grid-template-rows: auto auto;
+        grid-template-columns: auto auto auto auto;
+        grid-template-areas: 
+            "photos photos photos desc"
+            "music other_bits table table";
+    }
+
+    #about_me_desc, #required_table caption, #music {
+        font-size: 1.5vw;
+    }
+
+    #other_bits button {
+        display: block;
+    }
+
+
+}
