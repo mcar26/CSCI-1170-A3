@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="images/favicon.png">
+        <link rel="icon" href="./images/favicon.png">
         <title>About Me</title>
         <link href="styles.css" rel="stylesheet">
         <script src="script.js" defer></script>
@@ -73,13 +73,15 @@
 
             <section id="other_bits">
                 <div class="content_bg">
-                    <h2>Mystery buttons...</h2>
-                    <h3>What do they do??</h3>
-                    <div id="buttons">
-                        <button type="button" name="notif_button" id="notif_button"></button>
-                        <button type="button" name="input_button" id="input_button"></button>
-                        <button type="button" name="ani_button" id="ani_button"></button>
-                    </div>
+                    <label for="buttons">
+                        <h2>Mystery buttons...</h2>
+                        <h3>What do they do??</h3>
+                    </label>
+                    <form id="buttons" action="" method="POST">
+                        <button type="button" name="notif_button" id="notif_button">1</button>
+                        <button type="button" name="input_button" id="input_button">2</button>
+                        <button type="button" name="ani_button" id="ani_button">3</button>
+                    </form>
                     <label for="ani_button"></label>
                 </div>
             </section>
