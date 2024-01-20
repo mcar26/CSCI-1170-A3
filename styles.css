@@ -115,7 +115,8 @@ html#index {
 #index_header {
     font-size: 7vmin;
     grid-area: index_header;
-    background-image: url("images/dog_peace_sign.png");
+    /* background-image: url("images/dog_peace_sign.png"); */
+    background-color: var(--footer_color_1);
     background-repeat: repeat;
     background-position: center;
     display: flex;
